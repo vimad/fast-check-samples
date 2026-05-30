@@ -2,6 +2,8 @@ import {it, expect} from "vitest";
 import { Faker, type Randomizer, base, faker } from '@faker-js/faker';
 import fc from 'fast-check';
 
+// https://fast-check.dev/blog/2024/07/18/integrating-faker-with-fast-check/
+
 class FakerBuilder<TValue> extends fc.Arbitrary<TValue> {
     // @ts-ignore
     constructor(private readonly generator: (faker: Faker) => TValue) {
